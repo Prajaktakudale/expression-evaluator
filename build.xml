@@ -1,0 +1,45 @@
+<project>
+    <property name="test-dir" location="test"/>
+    <property name="build" location="build"/>
+    <property name="src" location="src"/>
+
+    <target name="start">
+        <mkdir dir="${build}/test"/>
+        <mkdir dir="${build}/src"/>
+    </target>
+
+    <target name="compile-source" depends="start">
+        <javac srcdir="src" destdir="${build}/src" includeantruntime = "false"/>
+    </target>
+
+    <target name="compile-test" depends="compile-source">
+        <javac srcdir="${test-dir}" destdir="${build}/test"
+                classpath = "${build}/src;lib/junit-4.10.jar" includeantruntime="false"/>
+    </target>
+
+    <target name="run-tests" depends="compile-test">
+        <java classname="org.junit.runner.JUnitCore"
+              classpath="lib/junit-4.10.jar;${build}/src;${build}/test/evaluatorTest">
+            <arg value = "evaluatorTest"></arg>
+        </java>
+    </target>
+
+    <target name="createJar" depends="run-tests">
+        <mkdir dir="evaluator/lib"/>
+        <mkdir dir="evaluator/bin"/>
+        <jar destfile="evaluator/lib/evaluator.jar" basedir="build/src"/>
+    </target>
+
+    <target name="moveSH" depends="createJar">
+        <copy file="Eval-Sh/EvalSh.sh" todir="evaluator/bin"/>
+    </target>
+
+    <target name="copyReadme" depends="moveSH">
+        <copy file="README.md" todir="evaluator"/>
+    </target>
+
+    <target name="createZip" depends="copyReadme">
+        <zip destfile="expression-evaluator.zip"
+             basedir="evaluator"/>
+    </target>
+</project>

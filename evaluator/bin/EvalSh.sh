@@ -1,0 +1,1 @@
+java -cp $EVAL_SH/lib/evaluator.jar main.ExpressionEvaluator
