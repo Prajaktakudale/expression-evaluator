@@ -1,18 +1,18 @@
 package main;
 
+import junit.framework.Assert;
 import org.junit.Test;
 import sourceLib.Evaluator;
 
-import static org.junit.Assert.assertEquals;
-
 public class evaluatorTest {
     @Test
-    public void testForReducingMoreThanOneSpeces() throws Exception {
-        Evaluator eval = new Evaluator();
+    public void testWillGives10IfExpression5plus5() throws Exception {
+        String actual;
+        String expected = "10";
 
-        int actual = eval.add(5,2);
-        int expected = 7;
+        Evaluator evaluate = new Evaluator();
+        actual = evaluate.expressionEvaluator("5 + 5");
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(actual, expected);
     }
 }
