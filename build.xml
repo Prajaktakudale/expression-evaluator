@@ -12,16 +12,25 @@
         <javac srcdir="src" destdir="${build}/src" includeantruntime = "false"/>
     </target>
 
-    <target name="compile-test" depends="compile-source">
+    <target name="compile-tests" depends="compile-source">
         <javac srcdir="${test-dir}" destdir="${build}/test"
-                classpath = "${build}/src;lib/junit-4.10.jar" includeantruntime="false"/>
+               classpath="${build}/src;lib/junit-4.10.jar" includeantruntime="false" debug="yes"/>
     </target>
 
-    <target name="run-tests" depends="compile-test">
-        <java classname="org.junit.runner.JUnitCore"
-              classpath="lib/junit-4.10.jar;${build}/src;${build}/test/evaluatorTest">
-            <arg value = "evaluatorTest"></arg>
-        </java>
+    <target name="run-tests" depends="compile-tests">
+        <junit haltonfailure="yes">
+            <classpath>
+                <pathelement location="${build}/src" />
+                <pathelement location="${build}/test" />
+                <pathelement location="lib/junit-4.10.jar"/>
+            </classpath>
+            <batchtest>
+                <fileset dir="${build}/test">
+                    <include name="**/*Test*" />
+                </fileset>
+            </batchtest>
+            <formatter type = "brief" usefile = "false"/>
+        </junit>
     </target>
 
     <target name="createJar" depends="run-tests">

@@ -10,7 +10,7 @@ public class evaluatorTest {
     public void testForReducingMoreThanOneSpeces() throws Exception {
         Evaluator eval = new Evaluator();
 
-        int actual = eval.add(5, 2);
+        int actual = eval.add(5,2);
         int expected = 7;
 
         assertEquals(expected, actual);
