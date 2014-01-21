@@ -1,5 +1,5 @@
 <project default = "createZip">
-    <property name="test-dir" location="test"/>
+    <property name="test-dir" location="Test"/>
     <property name="build" location="build"/>
     <property name="src" location="src"/>
 
