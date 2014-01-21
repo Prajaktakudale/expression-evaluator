@@ -15,4 +15,14 @@ public class evaluatorTest {
 
         Assert.assertEquals(actual, expected);
     }
+    @Test
+    public void testWillGives20IfExpression10plus10() throws Exception {
+        String actual;
+        String expected = "20";
+
+        Evaluator evaluate = new Evaluator();
+        actual = evaluate.expressionEvaluator("10 + 10");
+
+        Assert.assertEquals(actual, expected);
+    }
 }
