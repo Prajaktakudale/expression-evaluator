@@ -1,1 +1,1 @@
-java -cp $EVAL_SH/lib/evaluator.jar main.ExpressionEvaluator
+java -cp $EVALUATOR_HOME/lib/evaluator.jar main.ExpressionEvaluator "$@"
