@@ -1,4 +1,4 @@
-<project>
+<project default = "createZip">
     <property name="test-dir" location="test"/>
     <property name="build" location="build"/>
     <property name="src" location="src"/>
