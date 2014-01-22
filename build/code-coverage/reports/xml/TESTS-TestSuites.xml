@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Inprajaktv" id="0" name="evaluatorTest" package="main" skipped="0" tests="6" time="0.116" timestamp="2014-01-22T12:57:45">
+  <testsuite errors="0" failures="0" hostname="Inprajaktv" id="0" name="evaluatorTest" package="main" skipped="0" tests="6" time="0.117" timestamp="2014-01-22T13:42:38">
       <properties>
           <property name="ant.project.invoked-targets" value="createZip" />
 
@@ -98,7 +98,7 @@
 
           <property name="sun.arch.data.model" value="64" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.evaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\Projects\expression-evaluator\build\code-coverage\reports\xml\TEST-main.evaluatorTest.xml crashfile=d:\Projects\expression-evaluator\junitvmwatcher6699698611652378897.properties propsfile=d:\Projects\expression-evaluator\junit7445704539703523806.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.evaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\Projects\expression-evaluator\build\code-coverage\reports\xml\TEST-main.evaluatorTest.xml crashfile=d:\Projects\expression-evaluator\junitvmwatcher4941127186530987097.properties propsfile=d:\Projects\expression-evaluator\junit5538374239221233317.properties" />
 
           <property name="java.home" value="c:\Program Files\Java\jdk1.7.0_11\jre" />
 
@@ -136,11 +136,11 @@
 
       </properties>
 
-      <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression10plus10" time="0.016" />
+      <testcase classname="main.evaluatorTest" name="testWillGives0IfExpression10minus10" time="0.018" />
+
+      <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression10plus10" time="0.0" />
 
       <testcase classname="main.evaluatorTest" name="testWillGives10IfExpression5plus5" time="0.0" />
-
-      <testcase classname="main.evaluatorTest" name="testWillGives0IfExpression10minus10" time="0.0" />
 
       <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression5into4" time="0.001" />
 

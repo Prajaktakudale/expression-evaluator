@@ -36,7 +36,7 @@
     </target>
 
     <target name="compile-test" depends="compile">
-        <javac srcdir="test" destdir="build/classes/test"
+        <javac srcdir="Test" destdir="build/classes/Test"
                classpath="lib/junit-4.10.jar;build/classes/src" debug="yes" includeAntRuntime="false">
             <classpath refid="cobertura.classpath"/>
         </javac>
@@ -134,7 +134,7 @@
 
 
     <target name="createZip" depends="createJar">
-        <zip destfile="evaluator-0.1.zip" basedir="evaluator" update="true"/>
+        <zip destfile="evaluator-0.2.zip" basedir="evaluator" update="true"/>
     </target>
 
 </project>
