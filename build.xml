@@ -90,7 +90,7 @@
             <formatter type="xml"/>
             <test name="testcase" todir="build/code-coverage/reports/xml" if="testcase"/>
             <batchtest todir="build/code-coverage/reports/xml" unless="testcase">
-                <fileset dir="test">
+                <fileset dir="Test">
                     <include name="**/*Test.java"/>
                 </fileset>
             </batchtest>
