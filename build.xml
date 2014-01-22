@@ -133,7 +133,7 @@
     </target>
 
 
-    <target name="createZip" depends="createJar">
+    <target name="dist" depends="createJar">
         <zip destfile="evaluator-0.2.zip" basedir="evaluator" update="true"/>
     </target>
 
