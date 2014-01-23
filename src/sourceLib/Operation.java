@@ -4,41 +4,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 interface Operators {
-    void operate(int operand1, int operand2);
+    void operate(double operand1, double operand2);
 }
 
 public class Operation {
-    int answer;
+    double answer;
 
-    public int calculateResult(String operator, int no1, int no2) throws Exception {
+    public double calculateResult(String operator, double no1, double no2) throws Exception {
         Map<String, Operators> map = new HashMap<String, Operators>();
 
         map.put("+", new Operators() {
-            public void operate(int operand1, int operand2) {
+            public void operate(double operand1, double operand2) {
                 answer = operand1 + operand2;
             }
         });
 
         map.put("-", new Operators() {
-            public void operate(int operand1, int operand2) {
+            public void operate(double operand1, double operand2) {
                 answer = operand1 - operand2;
             }
         });
 
         map.put("*", new Operators() {
-            public void operate(int operand1, int operand2) {
+            public void operate(double operand1, double operand2) {
                 answer = operand1 * operand2;
             }
         });
 
         map.put("/", new Operators() {
-            public void operate(int operand1, int operand2) {
+            public void operate(double operand1, double operand2) {
                 answer = operand1 / operand2;
             }
         });
 
         map.put("^", new Operators() {
-            public void operate(int operand1, int operand2) {
+            public void operate(double operand1, double operand2) {
                 answer = (int) Math.pow(operand1, operand2);
             }
         });

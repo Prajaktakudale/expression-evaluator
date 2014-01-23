@@ -16,20 +16,20 @@ public class Evaluator extends Operation {
         return this.expr;
     }
 
-    private int ResultForBigExpression(List<Integer> operands, List<String> operators, Operation op) throws Exception {
+    private double ResultForBigExpression(List<Double> operands, List<String> operators, Operation op) throws Exception {
         int index;
-        int result = op.calculateResult(operators.get(0), operands.get(0), operands.get(1));
+        double result = op.calculateResult(operators.get(0), operands.get(0), operands.get(1));
         for (index = 1; index < operators.size(); index++) {
-            result = op.calculateResult(operators.get(index), result, operands.get(index + 1));
+            result = op.calculateResult(operators.get(index),result, operands.get(index + 1));
         }
         return result;
     }
 
-    private List<String> getOperandsAndOperators(String[] values, List<Integer> operands) {
+    private List<String> getOperandsAndOperators(String[] values, List<Double> operands) {
         List<String> operators = new ArrayList<String>();
         for (String operator : values) {
             try {
-                operands.add(Integer.parseInt(operator));
+                operands.add(Double.parseDouble(operator));
             } catch (Exception ex) {
                 operators.add(operator);
             }
@@ -51,28 +51,27 @@ public class Evaluator extends Operation {
             }
         }
         StringBuffer innerExpression = new StringBuffer(expression.substring(start + 1, end));
-        int result = getResult(innerExpression.toString().trim());
-        exp.replace(start, end + 1, Integer.toString(result));
+        double result = getResult(innerExpression.toString().trim());
+        exp.replace(start, end + 1, Double.toString(result));
         return exp.toString().trim();
     }
 
-    public int getResult() throws Exception {
+    public double getResult() throws Exception {
         return getResult(this.expr);
     }
 
-    public int getResult(String exprInsideBracket) throws Exception {
+    public double getResult(String exprInsideBracket) throws Exception {
         String inputExpr = exprInsideBracket;
         String[] exprValues;
         Operation op = new Operation();
-        List<Integer> operands = new ArrayList<Integer>();
+        List<Double> operands = new ArrayList<Double>();
         if (inputExpr.contains("(")) {
             inputExpr = brackets(inputExpr);
             return getResult(inputExpr);
         }
         exprValues = inputExpr.split(" ");
         List<String> operators = getOperandsAndOperators(exprValues, operands);
-        int result = ResultForBigExpression(operands, operators, op);
+        double result = ResultForBigExpression(operands, operators, op);
         return result;
     }
-
 }
