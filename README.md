@@ -16,6 +16,19 @@
 2.Multiple brackets will accepted in expression.     
 2.Give two or more than two operands and operators.                 
 3.Space is needed between operands,operators and brackets.                
+4.It will evaluate expression of integers and float with following operators          
+    +,-,*,/,^
+    
+    Example.  
+           2.0 + 1.0 result 3.0
+
+
+##Version 0.5
+
+1.Give positive numbers.         
+2.Multiple brackets will accepted in expression.     
+2.Give two or more than two operands and operators.                 
+3.Space is needed between operands,operators and brackets.                
 4.It will evaluate expression of two integers with following operators          
     +,-,*,/,^
     
