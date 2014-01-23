@@ -11,15 +11,20 @@
 ##How to use
 
 ##Version 0.2
-It can evaluate expression of two integers with following operators
+
+1.Give positive numbers.
+2.Give two operands and one operator
+3.Space is needed between operands and operators.
+4.It will evaluate expression of two integers with following operators
     +,-,*,/,^
     
     Example.  
-            4 + 4 will result 8.0  
-    	    8 - 4 will result 4.0  
-	        8 * 2 will result 16.0  
-	        8 / 4 will result 2.0  
-	        2 ^ 3 will result 8.0  
+            4 + 4 result 8.0
+    	    8 - 4 result 4.0
+	        8 * 2 result 16.0
+	        8 / 4 result 2.0
+	        2 ^ 3 result 8.0
+
 ##Version 0.1
 
 1.Give positive numbers. 
