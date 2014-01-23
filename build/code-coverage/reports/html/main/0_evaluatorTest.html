@@ -25,6 +25,8 @@
     
         cur['ant.library.dir'] = 'd:/Projects/apache-ant-1.9.3-bin/apache-ant-1.9.3/lib';
     
+        cur['ant.project.default-target'] = 'dist';
+    
         cur['ant.project.invoked-targets'] = 'dist';
     
         cur['ant.project.name'] = 'expression-evaluator';
@@ -115,7 +117,7 @@
     
         cur['sun.io.unicode.encoding'] = 'UnicodeLittle';
     
-        cur['sun.java.command'] = 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.evaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\\Projects\\expression-evaluator\\build\\code-coverage\\reports\\xml\\TEST-main.evaluatorTest.xml crashfile=d:\\Projects\\expression-evaluator\\junitvmwatcher4416975021266494666.properties propsfile=d:\\Projects\\expression-evaluator\\junit5140243443416763544.properties';
+        cur['sun.java.command'] = 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.evaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\\Projects\\expression-evaluator\\build\\code-coverage\\reports\\xml\\TEST-main.evaluatorTest.xml crashfile=d:\\Projects\\expression-evaluator\\junitvmwatcher3533444109026020722.properties propsfile=d:\\Projects\\expression-evaluator\\junit3175129887353732121.properties';
     
         cur['sun.java.launcher'] = 'SUN_STANDARD';
     
@@ -184,7 +186,7 @@
 <th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th>Skipped</th><th nowrap>Time(s)</th><th nowrap>Time Stamp</th><th>Host</th>
 </tr>
 <tr valign="top" class="Pass">
-<td><a title="Display all tests" href="0_evaluatorTest.html">evaluatorTest</a></td><td><a title="Display all tests" href="0_evaluatorTest.html">7</a></td><td>0</td><td>0</td><td>0</td><td>0.134</td><td>2014-01-23T08:41:54</td><td>Inprajaktv</td>
+<td><a title="Display all tests" href="0_evaluatorTest.html">evaluatorTest</a></td><td><a title="Display all tests" href="0_evaluatorTest.html">10</a></td><td>0</td><td>0</td><td>0</td><td>0.149</td><td>2014-01-23T13:45:23</td><td>Inprajaktv</td>
 </tr>
 </table>
 <h2>Tests</h2>
@@ -193,16 +195,19 @@
 <th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
 </tr>
 <tr valign="top" class="TableRowColor">
-<td><a name="testWillGivesExpression"></a>testWillGivesExpression</td><td>Success</td><td></td><td>0.019</td>
+<td><a name="testWillgive52ForExpressonWhichHasMultipleBrackets"></a>testWillgive52ForExpressonWhichHasMultipleBrackets</td><td>Success</td><td></td><td>0.021</td>
 </tr>
 <tr valign="top" class="TableRowColor">
-<td><a name="testWillGives20IfExpression5into4"></a>testWillGives20IfExpression5into4</td><td>Success</td><td></td><td>0.013</td>
+<td><a name="testWillgive6ForExpressonWhichHasNestedBrackets"></a>testWillgive6ForExpressonWhichHasNestedBrackets</td><td>Success</td><td></td><td>0.000</td>
 </tr>
 <tr valign="top" class="TableRowColor">
-<td><a name="testWillGives0IfExpression10minus10"></a>testWillGives0IfExpression10minus10</td><td>Success</td><td></td><td>0.000</td>
+<td><a name="testWillGives20IfExpression5into4"></a>testWillGives20IfExpression5into4</td><td>Success</td><td></td><td>0.000</td>
 </tr>
 <tr valign="top" class="TableRowColor">
-<td><a name="testWillGives20IfExpression10plus10"></a>testWillGives20IfExpression10plus10</td><td>Success</td><td></td><td>0.000</td>
+<td><a name="testWillGives0IfExpression10minus10"></a>testWillGives0IfExpression10minus10</td><td>Success</td><td></td><td>0.001</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testWillGives20IfExpression10plus10"></a>testWillGives20IfExpression10plus10</td><td>Success</td><td></td><td>0.001</td>
 </tr>
 <tr valign="top" class="TableRowColor">
 <td><a name="testWillGives3IfExpression15divided5"></a>testWillGives3IfExpression15divided5</td><td>Success</td><td></td><td>0.000</td>
@@ -211,7 +216,13 @@
 <td><a name="testWillGives8IfExpression2topow3"></a>testWillGives8IfExpression2topow3</td><td>Success</td><td></td><td>0.000</td>
 </tr>
 <tr valign="top" class="TableRowColor">
-<td><a name="testWillGives18AfterEvalutionOfExpression"></a>testWillGives18AfterEvalutionOfExpression</td><td>Success</td><td></td><td>0.000</td>
+<td><a name="testWillGives18AfterEvalutionOfExpression"></a>testWillGives18AfterEvalutionOfExpression</td><td>Success</td><td></td><td>0.001</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testWillgive50ForExpressionWhichHasBracket"></a>testWillgive50ForExpressionWhichHasBracket</td><td>Success</td><td></td><td>0.001</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testWillGivesExpression"></a>testWillGivesExpression</td><td>Success</td><td></td><td>0.000</td>
 </tr>
 </table>
 <div class="Properties">

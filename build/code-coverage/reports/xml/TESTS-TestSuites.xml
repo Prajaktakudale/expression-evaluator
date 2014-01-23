@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Inprajaktv" id="0" name="evaluatorTest" package="main" skipped="0" tests="7" time="0.134" timestamp="2014-01-23T08:41:54">
+  <testsuite errors="0" failures="0" hostname="Inprajaktv" id="0" name="evaluatorTest" package="main" skipped="0" tests="10" time="0.149" timestamp="2014-01-23T13:45:23">
       <properties>
           <property name="ant.project.invoked-targets" value="dist" />
 
@@ -50,6 +50,8 @@
 
           <property name="os.arch" value="amd64" />
 
+          <property name="ant.project.default-target" value="dist" />
+
           <property name="java.io.tmpdir" value="C:\Users\prajaktv\AppData\Local\Temp\" />
 
           <property name="ant.core.lib" value="d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant.jar" />
@@ -90,17 +92,17 @@
 
           <property name="java.specification.version" value="1.7" />
 
-          <property name="java.class.path" value="d:\Projects\expression-evaluator\build\code-coverage\instrumented;d:\Projects\expression-evaluator\build\classes\src;d:\Projects\expression-evaluator\build\classes\test;d:\Projects\expression-evaluator\lib\junit-4.10.jar;d:\Projects\expression-evaluator\external-lib\asm-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-analysis-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-commons-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-tree-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-util-4.1.jar;d:\Projects\expression-evaluator\external-lib\cobertura-2.0.1.jar;d:\Projects\expression-evaluator\external-lib\junit-4.10.jar;d:\Projects\expression-evaluator\external-lib\log4j-1.2.9.jar;d:\Projects\expression-evaluator\external-lib\oro-2.0.8.jar;d:\Projects\expression-evaluator\external-lib\tagsoup-0.9.7.jar;d:\Projects\expression-evaluator\external-lib\xmlParserAPIs-2.6.2.jar;d:\Projects\expression-evaluator\external-lib\xom-1.0b3.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\junit-4.10.jar;D:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant-launcher.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant-junit.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant-junit4.jar" />
-
           <property name="user.name" value="prajaktv" />
+
+          <property name="java.class.path" value="d:\Projects\expression-evaluator\build\code-coverage\instrumented;d:\Projects\expression-evaluator\build\classes\src;d:\Projects\expression-evaluator\build\classes\test;d:\Projects\expression-evaluator\lib\junit-4.10.jar;d:\Projects\expression-evaluator\external-lib\asm-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-analysis-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-commons-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-tree-4.1.jar;d:\Projects\expression-evaluator\external-lib\asm-util-4.1.jar;d:\Projects\expression-evaluator\external-lib\cobertura-2.0.1.jar;d:\Projects\expression-evaluator\external-lib\junit-4.10.jar;d:\Projects\expression-evaluator\external-lib\log4j-1.2.9.jar;d:\Projects\expression-evaluator\external-lib\oro-2.0.8.jar;d:\Projects\expression-evaluator\external-lib\tagsoup-0.9.7.jar;d:\Projects\expression-evaluator\external-lib\xmlParserAPIs-2.6.2.jar;d:\Projects\expression-evaluator\external-lib\xom-1.0b3.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\junit-4.10.jar;D:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant-launcher.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant-junit.jar;d:\Projects\apache-ant-1.9.3-bin\apache-ant-1.9.3\lib\ant-junit4.jar" />
 
           <property name="java.vm.specification.version" value="1.7" />
 
-          <property name="sun.arch.data.model" value="64" />
-
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.evaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\Projects\expression-evaluator\build\code-coverage\reports\xml\TEST-main.evaluatorTest.xml crashfile=d:\Projects\expression-evaluator\junitvmwatcher4416975021266494666.properties propsfile=d:\Projects\expression-evaluator\junit5140243443416763544.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.evaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\Projects\expression-evaluator\build\code-coverage\reports\xml\TEST-main.evaluatorTest.xml crashfile=d:\Projects\expression-evaluator\junitvmwatcher3533444109026020722.properties propsfile=d:\Projects\expression-evaluator\junit3175129887353732121.properties" />
 
           <property name="java.home" value="c:\Program Files\Java\jdk1.7.0_11\jre" />
+
+          <property name="sun.arch.data.model" value="64" />
 
           <property name="java.specification.vendor" value="Oracle Corporation" />
 
@@ -114,9 +116,9 @@
 
           <property name="java.ext.dirs" value="c:\Program Files\Java\jdk1.7.0_11\jre\lib\ext;C:\windows\Sun\Java\lib\ext" />
 
-          <property name="sun.boot.class.path" value="c:\Program Files\Java\jdk1.7.0_11\jre\lib\resources.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\rt.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\sunrsasign.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\jsse.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\jce.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\charsets.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\jfr.jar;c:\Program Files\Java\jdk1.7.0_11\jre\classes" />
-
           <property name="ant.file.expression-evaluator" value="d:\Projects\expression-evaluator\build.xml" />
+
+          <property name="sun.boot.class.path" value="c:\Program Files\Java\jdk1.7.0_11\jre\lib\resources.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\rt.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\sunrsasign.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\jsse.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\jce.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\charsets.jar;c:\Program Files\Java\jdk1.7.0_11\jre\lib\jfr.jar;c:\Program Files\Java\jdk1.7.0_11\jre\classes" />
 
           <property name="java.vendor" value="Oracle Corporation" />
 
@@ -136,19 +138,25 @@
 
       </properties>
 
-      <testcase classname="main.evaluatorTest" name="testWillGivesExpression" time="0.019" />
+      <testcase classname="main.evaluatorTest" name="testWillgive52ForExpressonWhichHasMultipleBrackets" time="0.021" />
 
-      <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression5into4" time="0.013" />
+      <testcase classname="main.evaluatorTest" name="testWillgive6ForExpressonWhichHasNestedBrackets" time="0.0" />
 
-      <testcase classname="main.evaluatorTest" name="testWillGives0IfExpression10minus10" time="0.0" />
+      <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression5into4" time="0.0" />
 
-      <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression10plus10" time="0.0" />
+      <testcase classname="main.evaluatorTest" name="testWillGives0IfExpression10minus10" time="0.001" />
+
+      <testcase classname="main.evaluatorTest" name="testWillGives20IfExpression10plus10" time="0.001" />
 
       <testcase classname="main.evaluatorTest" name="testWillGives3IfExpression15divided5" time="0.0" />
 
       <testcase classname="main.evaluatorTest" name="testWillGives8IfExpression2topow3" time="0.0" />
 
-      <testcase classname="main.evaluatorTest" name="testWillGives18AfterEvalutionOfExpression" time="0.0" />
+      <testcase classname="main.evaluatorTest" name="testWillGives18AfterEvalutionOfExpression" time="0.001" />
+
+      <testcase classname="main.evaluatorTest" name="testWillgive50ForExpressionWhichHasBracket" time="0.001" />
+
+      <testcase classname="main.evaluatorTest" name="testWillGivesExpression" time="0.0" />
 
       <system-out><![CDATA[]]></system-out>
 

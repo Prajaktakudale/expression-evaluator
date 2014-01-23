@@ -80,4 +80,38 @@ public class evaluatorTest {
 
         Assert.assertEquals(actual, expected);
     }
+
+    @Test
+    public void testWillgive50ForExpressionWhichHasBracket() throws Exception {
+        String expression = "2 + 3 * ( 2 + 8 )";
+        int expected = 50;
+
+        Evaluator evaluator = new Evaluator(expression);
+        int actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillgive52ForExpressonWhichHasMultipleBrackets() throws Exception {
+        String expression = "2 + 3 * ( 2 + 8 ) + (1 + 1)";
+        int expected = 52;
+
+        Evaluator evaluator = new Evaluator(expression);
+        int actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillgive6ForExpressonWhichHasNestedBrackets() throws Exception {
+        String expression = "2 + ( 1 + ( 2 + 1))";
+        int expected = 6;
+
+        Evaluator evaluator = new Evaluator(expression);
+        int actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
 }

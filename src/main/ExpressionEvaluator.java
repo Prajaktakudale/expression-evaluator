@@ -10,7 +10,7 @@ public class ExpressionEvaluator {
         try {
             System.out.println(evaluator.getResult());
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Worng input");
         }
     }
 }

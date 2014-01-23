@@ -36,11 +36,43 @@ public class Evaluator extends Operation {
         }
         return operators;
     }
-        public int getResult() throws Exception {
-        String[] values = this.expr.split(" ");
-        List<Integer> operands = new ArrayList<Integer>();
-        List<String> operators = getOperandsAndOperators(values, operands);
-        Operation op = new Operation();
-        return ResultForBigExpression(operands, operators, op);
+
+    private String brackets(String expression) throws Exception {
+        StringBuilder exp = new StringBuilder(expression);
+        int start = 0;
+        int end = 0;
+        for (int index = 0; index < expression.length(); index++) {
+            if (expression.charAt(index) == '(') {
+                start = index;
+            }
+            if (expression.charAt(index) == ')') {
+                end = index;
+                break;
+            }
+        }
+        StringBuffer innerExpression = new StringBuffer(expression.substring(start + 1, end));
+        int result = getResult(innerExpression.toString().trim());
+        exp.replace(start, end + 1, Integer.toString(result));
+        return exp.toString().trim();
     }
+
+    public int getResult() throws Exception {
+        return getResult(this.expr);
+    }
+
+    public int getResult(String exprInsideBracket) throws Exception {
+        String inputExpr = exprInsideBracket;
+        String[] exprValues;
+        Operation op = new Operation();
+        List<Integer> operands = new ArrayList<Integer>();
+        if (inputExpr.contains("(")) {
+            inputExpr = brackets(inputExpr);
+            return getResult(inputExpr);
+        }
+        exprValues = inputExpr.split(" ");
+        List<String> operators = getOperandsAndOperators(exprValues, operands);
+        int result = ResultForBigExpression(operands, operators, op);
+        return result;
+    }
+
 }

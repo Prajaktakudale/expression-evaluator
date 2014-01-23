@@ -10,6 +10,29 @@
 
 ##How to use
 
+##Version 0.3
+
+1.Give positive numbers.       
+2.Brackets will accepted in expression.
+2.Give two or more than two operands and operators.           
+3.Space is needed between operands,operators and brackets.          
+4.It will evaluate expression of two integers with following operators     
+    +,-,*,/,^
+    
+    Example.  
+            4 + 5 - ( 2 * 3 ) result 14
+            
+##Version 0.3
+
+1.Give positive numbers.    
+2.Give two or more than two operands and operators     
+3.Space is needed between operands and operators.     
+4.It will evaluate expression of two integers with following operators     
+    +,-,*,/,^
+    
+    Example.  
+            4 + 5 - 2 * 3 / 3 ^ 2 result 49
+
 ##Version 0.2
 
 1.Give positive numbers.

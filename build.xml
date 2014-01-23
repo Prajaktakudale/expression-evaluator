@@ -1,5 +1,6 @@
-<project name="expression-evaluator">
-    <target name="init">
+<project default = "dist"
+        name="expression-evaluator">
+        <target name="init">
         <mkdir dir="build"/>
         <mkdir dir="build/classes"/>
         <mkdir dir="build/classes/test"/>
@@ -11,10 +12,10 @@
         <mkdir dir="build/code-coverage/coverage/summaryxml"/>
         <mkdir dir="build/code-coverage/coverage/html"/>
 
-        <copy todir="evaluator/bin">
+        <copy todir="build/dist/bin">
             <fileset dir="Eval-Sh"/>
         </copy>
-        <copy file="README.md" tofile="evaluator/README.md"/>
+        <copy file="README.md" tofile="build/dist/README.md"/>
     </target>
 
     <path id="cobertura.classpath">
@@ -129,12 +130,12 @@
     </target>
 
     <target name="createJar" depends="coverage">
-        <jar destfile="evaluator/lib/expression-evaluator.jar" basedir="build/classes/src"/>
+        <jar destfile="build/dist/lib/expression-evaluator.jar" basedir="build/classes/src"/>
     </target>
 
 
     <target name="dist" depends="createJar">
-        <zip destfile="evaluator-0.3.zip" basedir="evaluator" update="true"/>
+        <zip destfile="evaluator-0.5.zip" basedir="build/dist" update="true"/>
     </target>
 
 </project>

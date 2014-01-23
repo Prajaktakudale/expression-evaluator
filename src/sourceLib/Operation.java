@@ -46,4 +46,6 @@ public class Operation {
         map.get(operator).operate(no1, no2);
         return answer;
     }
+
+
 }
