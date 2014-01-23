@@ -12,10 +12,10 @@
 
 ##Version 0.3
 
-1.Give positive numbers.
-2.Give two or more than two operands and operators
-3.Space is needed between operands and operators.
-4.It will evaluate expression of two integers with following operators
+1.Give positive numbers.    
+2.Give two or more than two operands and operators     
+3.Space is needed between operands and operators.     
+4.It will evaluate expression of two integers with following operators     
     +,-,*,/,^
     
     Example.  
