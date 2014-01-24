@@ -17,17 +17,14 @@ public class Evaluator extends Operation {
     }
 
     private double ResultForBigExpression(List<Double> operands, List<String> operators, Operation op) throws Exception {
-        int index;
-        if (operands.size() == 1)
-            return operands.get(0);
-        double result = op.calculateResult(operators.get(0), operands.get(0), operands.get(1));
-        for (index = 1; index < operators.size(); index++) {
-            result = op.calculateResult(operators.get(index), result, operands.get(index + 1));
+        double operator = operands.get(0);
+        for (int index = 0; index < operators.size(); index++) {
+            operator = op.calculateResult(operators.get(index), operator, operands.get(index + 1));
         }
-        return result;
+        return operator;
     }
 
-    private List<String> getOperandsAndOperators(String[] values, List<Double> operands) {
+    private List<String> getOperandsAndOperators(String[] values, List<Double> operands) throws Exception{
         List<String> operators = new ArrayList<String>();
         for (String operator : values) {
             try {
@@ -59,7 +56,7 @@ public class Evaluator extends Operation {
     }
 
 
-    public String replacespace(String expr) {
+    public String replacespace(String expr)throws Exception{
         return expr.trim().replaceAll(" +", " ")
                 .replaceAll("\\+", " + ")
                 .replaceAll("\\-", " - ")
@@ -72,6 +69,8 @@ public class Evaluator extends Operation {
                 .replaceAll("^ - ", "-")
                 .replaceAll("^\\( - ", "(-")
                 .replaceAll("\\--", " + ");
+
+
     }
 
     public double getResult(String exprInsideBracket) throws Exception {

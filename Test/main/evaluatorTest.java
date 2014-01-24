@@ -226,28 +226,6 @@ public class evaluatorTest {
     }
 
     @Test
-    public void testWillGives1point0AfterEvalutionOfExpression() throws Exception {
-        String expression = "-(-1)";
-        double expected = 1.0;
-
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    public void testWillGives8point0AfterEvalutionOfExpression() throws Exception {
-        String expression = "        8     +     0";
-        double expected = 8.0;
-
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
-    }
-
-    @Test
     public void testWillGives18point0AfterEvalutionOfExpression() throws Exception {
         String expression = "9 - -9";
         double expected = 18.0;
@@ -269,4 +247,32 @@ public class evaluatorTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testWillGiveExceptionAfterEvalutionOfExpression() throws Exception {
+        String expression = "22*";
+
+        Evaluator evaluator = new Evaluator(expression);
+        evaluator.getResult();
+
+    }
+
+    @Test
+    public void testWillGives8point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "        8     +     0";
+        double expected = 8.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testWillGivesExceptionAfterEvalutionOfExpression() throws Exception {
+        String expression = "a*1";
+
+        Evaluator evaluator = new Evaluator(expression);
+        evaluator.getResult();
+
+    }
 }
