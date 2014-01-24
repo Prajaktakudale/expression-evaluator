@@ -1,1 +1,0 @@
-java -cp $EVALUATOR_HOME/lib/expression-evaluator.jar main.ExpressionEvaluator "$@"

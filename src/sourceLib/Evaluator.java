@@ -18,9 +18,11 @@ public class Evaluator extends Operation {
 
     private double ResultForBigExpression(List<Double> operands, List<String> operators, Operation op) throws Exception {
         int index;
+        if (operands.size() == 1)
+            return operands.get(0);
         double result = op.calculateResult(operators.get(0), operands.get(0), operands.get(1));
         for (index = 1; index < operators.size(); index++) {
-            result = op.calculateResult(operators.get(index),result, operands.get(index + 1));
+            result = op.calculateResult(operators.get(index), result, operands.get(index + 1));
         }
         return result;
     }
@@ -56,12 +58,24 @@ public class Evaluator extends Operation {
         return exp.toString().trim();
     }
 
-    public double getResult() throws Exception {
-        return getResult(this.expr);
+
+    public String replacespace(String expr) {
+        return expr.trim().replaceAll(" +", " ")
+                .replaceAll("\\+", " + ")
+                .replaceAll("\\-", " - ")
+                .replaceAll("\\*", " * ")
+                .replaceAll("\\/", " / ")
+                .replaceAll("\\^", " ^ ")
+                .replaceAll("\\(", "( ")
+                .replaceAll("\\)", " )")
+                .replaceAll("  - ", " -")
+                .replaceAll("^ - ", "-")
+                .replaceAll("^\\( - ", "(-")
+                .replaceAll("\\--", " + ");
     }
 
     public double getResult(String exprInsideBracket) throws Exception {
-        String inputExpr = exprInsideBracket;
+        String inputExpr = replacespace(exprInsideBracket);
         String[] exprValues;
         Operation op = new Operation();
         List<Double> operands = new ArrayList<Double>();
@@ -69,9 +83,13 @@ public class Evaluator extends Operation {
             inputExpr = brackets(inputExpr);
             return getResult(inputExpr);
         }
-        exprValues = inputExpr.split(" ");
+        exprValues = inputExpr.split("\\s+");
         List<String> operators = getOperandsAndOperators(exprValues, operands);
         double result = ResultForBigExpression(operands, operators, op);
         return result;
+    }
+
+    public double getResult() throws Exception {
+        return getResult(this.expr);
     }
 }

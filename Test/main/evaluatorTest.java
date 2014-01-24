@@ -82,6 +82,17 @@ public class evaluatorTest {
     }
 
     @Test
+    public void testWillGives3point0ForExpressionWhichHasOneBracket() throws Exception {
+        String expression = "(2 + 1)";
+        double expected = 3.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
     public void testWillgive50ForExpressionWhichHasBracket() throws Exception {
         String expression = "2 + 3 * ( 2 + 8 )";
         double expected = 50.0;
@@ -115,7 +126,18 @@ public class evaluatorTest {
     }
 
     @Test
-    public void testWillGives3point0AfterEvalutionOfExpression() throws Exception {
+    public void testWillgiveminus14point0ForExpressonWhichHasNestedBrackets() throws Exception {
+        String expression = "2 + ( (1 + 1)-(6 * ( 2 + 1)))";
+        double expected = -14.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGives3point0AfterEvalutionOfFloatExpression() throws Exception {
         String expression = "2.0 + 1.0";
         double expected = 3.0;
 
@@ -126,7 +148,7 @@ public class evaluatorTest {
     }
 
     @Test
-    public void testWillGives1AfterEvalutionOfExpression() throws Exception {
+    public void testWillGives1AfterEvalutionOfFloatExpression() throws Exception {
         String expression = "(2.0 + 1.0) + 4.0";
         double expected = 7.0;
 
@@ -135,4 +157,116 @@ public class evaluatorTest {
 
         Assert.assertEquals(actual, expected);
     }
+
+    @Test
+    public void testWillGives4point0AfterEvalutionOfExpressionWhichDontHaveSpace() throws Exception {
+        String expression = "2+2";
+        double expected = 4.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+
+    @Test
+    public void testWillGives27point0AfterEvalutionOfExpressionWhichDontHaveSpace() throws Exception {
+        String expression = "2.0+1*((9.0*2)/2.0)";
+        double expected = 27.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGivespoint0AfterEvalutionOfExpressionWhichDontHaveSpace() throws Exception {
+        String expression = "(-1)";
+        double expected = -1.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGives1AfterEvalutionOfExpressionWhichDontHaveSpace() throws Exception {
+        String expression = "(1)";
+        double expected = 1;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGivesminus1point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "-7/7";
+        double expected = -1.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGivesminus20point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "23+(-3)";
+        double expected = 20.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGives1point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "-(-1)";
+        double expected = 1.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGives8point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "        8     +     0";
+        double expected = 8.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGives18point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "9 - -9";
+        double expected = 18.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testWillGivesminus4point0AfterEvalutionOfExpression() throws Exception {
+        String expression = "-2-2";
+        double expected = -4.0;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(actual, expected);
+    }
+
 }
