@@ -39,7 +39,7 @@ public class Operation {
 
         map.put("^", new Operators() {
             public void operate(double operand1, double operand2) {
-                answer = (int) Math.pow(operand1, operand2);
+                answer = Math.pow(operand1, operand2);
             }
         });
 

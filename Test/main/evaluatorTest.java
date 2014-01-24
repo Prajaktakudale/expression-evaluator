@@ -264,7 +264,18 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator(expression);
         double actual = evaluator.getResult();
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testWillGivesminus1pointAfterEvalutionOfExpression() throws Exception {
+        String expression = "2 ^ (-3)";
+        double expected = 0.125;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(expected,actual);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
@@ -275,4 +286,16 @@ public class evaluatorTest {
         evaluator.getResult();
 
     }
+
+    @Test
+    public void testWillGivesminus0pointAfterEvalutionOfExpression() throws Exception {
+        String expression = "1.25 -- 0.25";
+        double expected = 1.5;
+
+        Evaluator evaluator = new Evaluator(expression);
+        double actual = evaluator.getResult();
+
+        Assert.assertEquals(expected,actual);
+    }
+
 }

@@ -58,6 +58,7 @@ public class Evaluator extends Operation {
 
     public String replacespace(String expr)throws Exception{
         return expr.trim().replaceAll(" +", " ")
+                .replaceAll(" -- ", "+")
                 .replaceAll("\\+", " + ")
                 .replaceAll("\\-", " - ")
                 .replaceAll("\\*", " * ")
@@ -69,8 +70,6 @@ public class Evaluator extends Operation {
                 .replaceAll("^ - ", "-")
                 .replaceAll("^\\( - ", "(-")
                 .replaceAll("\\--", " + ");
-
-
     }
 
     public double getResult(String exprInsideBracket) throws Exception {

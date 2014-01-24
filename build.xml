@@ -135,6 +135,6 @@
 
 
     <target name="dist" depends="createJar">
-        <zip destfile="evaluator-0.7.zip" basedir="build/dist" update="true"/>
+        <zip destfile="evaluator-0.8.zip" basedir="build/dist" update="true"/>
     </target>
 </project>
