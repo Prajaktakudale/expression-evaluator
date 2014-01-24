@@ -10,7 +10,20 @@
 
 ##How to use
 
-##Version 0.5
+##Version 0.7
+
+1.Give positive and negative numbers.           
+2.Multiple brackets will accepted in expression.        
+3.Give two or more than two operands and operators.
+4.Space is not needed between operands and operators.                    
+5.It will evaluate expression of integers and float with following operators          
+    +,-,*,/,^
+    
+    Example.  
+           1+1 result 2.0
+           -1-1 result -2.0
+
+##Version 0.6
 
 1.Give positive numbers.         
 2.Multiple brackets will accepted in expression.     
