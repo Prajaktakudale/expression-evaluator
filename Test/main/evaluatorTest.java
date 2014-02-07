@@ -7,9 +7,10 @@ import sourceLib.Evaluator;
 public class evaluatorTest {
     @Test
     public void testWillGives20IfExpression10plus10() throws Exception {
-        String expression = "5 + 5";
-        double expected = 10.0;
+        testOp("5 + 5", 10.0);
+    }
 
+    private void testOp(String expression, double expected) throws Exception {
         Evaluator evaluator = new Evaluator(expression);
         double actual = evaluator.getResult();
 
@@ -21,10 +22,7 @@ public class evaluatorTest {
         String expression = "10 - 10";
         double expected = 0.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -32,10 +30,7 @@ public class evaluatorTest {
         String expression = "5 * 4";
         double expected = 20.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -43,10 +38,7 @@ public class evaluatorTest {
         String expression = "15 / 5";
         double expected = 3.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -54,10 +46,7 @@ public class evaluatorTest {
         String expression = "2 ^ 3";
         double expected = 8.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -75,10 +64,7 @@ public class evaluatorTest {
         String expression = "2 + 3 * 2 + 8";
         double expected = 18.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -86,10 +72,7 @@ public class evaluatorTest {
         String expression = "(2 + 1)";
         double expected = 3.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -97,10 +80,7 @@ public class evaluatorTest {
         String expression = "2 + 3 * ( 2 + 8 )";
         double expected = 50.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -108,10 +88,7 @@ public class evaluatorTest {
         String expression = "2 + 3 * ( 2 + 8 ) + (1 + 1)";
         double expected = 52.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -119,10 +96,7 @@ public class evaluatorTest {
         String expression = "2 + ( 1 + ( 2 + 1))";
         double expected = 6.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -130,10 +104,7 @@ public class evaluatorTest {
         String expression = "2 + ( (1 + 1)-(6 * ( 2 + 1)))";
         double expected = -14.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -141,10 +112,7 @@ public class evaluatorTest {
         String expression = "2.0 + 1.0";
         double expected = 3.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -152,10 +120,7 @@ public class evaluatorTest {
         String expression = "(2.0 + 1.0) + 4.0";
         double expected = 7.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -163,10 +128,7 @@ public class evaluatorTest {
         String expression = "2+2";
         double expected = 4.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
 
@@ -175,10 +137,7 @@ public class evaluatorTest {
         String expression = "2.0+1*((9.0*2)/2.0)";
         double expected = 27.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -186,10 +145,7 @@ public class evaluatorTest {
         String expression = "(-1)";
         double expected = -1.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -197,10 +153,7 @@ public class evaluatorTest {
         String expression = "(1)";
         double expected = 1;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -208,10 +161,7 @@ public class evaluatorTest {
         String expression = "-7/7";
         double expected = -1.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -219,10 +169,7 @@ public class evaluatorTest {
         String expression = "23+(-3)";
         double expected = 20.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -230,10 +177,7 @@ public class evaluatorTest {
         String expression = "9 - -9";
         double expected = 18.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test
@@ -241,10 +185,7 @@ public class evaluatorTest {
         String expression = "-2-2";
         double expected = -4.0;
 
-        Evaluator evaluator = new Evaluator(expression);
-        double actual = evaluator.getResult();
-
-        Assert.assertEquals(actual, expected);
+        testOp(expression, expected);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)

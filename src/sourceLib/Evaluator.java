@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Evaluator extends Operation {
+public class Evaluator {
     String expr;
 
     public Evaluator(String expression) {
-        super();
         this.expr = expression;
     }
 
@@ -16,12 +15,12 @@ public class Evaluator extends Operation {
         return this.expr;
     }
 
-    private double ResultForBigExpression(List<Double> operands, List<String> operators, Operation op) throws Exception {
-        double operator = operands.get(0);
+    private double ResultForBigExpression(List<Double> operands, List<String> operators, Operator op) throws Exception {
+        double num1 = operands.get(0);
         for (int index = 0; index < operators.size(); index++) {
-            operator = op.calculateResult(operators.get(index), operator, operands.get(index + 1));
+            num1 = op.calculateResult(operators.get(index), num1, operands.get(index + 1));
         }
-        return operator;
+        return num1;
     }
 
     private List<String> getOperandsAndOperators(String[] values, List<Double> operands) throws Exception{
@@ -49,33 +48,16 @@ public class Evaluator extends Operation {
                 break;
             }
         }
-        StringBuffer innerExpression = new StringBuffer(expression.substring(start + 1, end));
+        StringBuilder innerExpression = new StringBuilder(expression.substring(start + 1, end));
         double result = getResult(innerExpression.toString().trim());
         exp.replace(start, end + 1, Double.toString(result));
         return exp.toString().trim();
     }
 
-
-    public String replacespace(String expr)throws Exception{
-        return expr.trim().replaceAll(" +", " ")
-                .replaceAll(" -- ", "+")
-                .replaceAll("\\+", " + ")
-                .replaceAll("\\-", " - ")
-                .replaceAll("\\*", " * ")
-                .replaceAll("\\/", " / ")
-                .replaceAll("\\^", " ^ ")
-                .replaceAll("\\(", "( ")
-                .replaceAll("\\)", " )")
-                .replaceAll("  - ", " -")
-                .replaceAll("^ - ", "-")
-                .replaceAll("^\\( - ", "(-")
-                .replaceAll("\\--", " + ");
-    }
-
     public double getResult(String exprInsideBracket) throws Exception {
-        String inputExpr = replacespace(exprInsideBracket);
+        String inputExpr = new SpaceHandler(exprInsideBracket).getExpressionWithSpace();
         String[] exprValues;
-        Operation op = new Operation();
+        Operator op = new Operator();
         List<Double> operands = new ArrayList<Double>();
         if (inputExpr.contains("(")) {
             inputExpr = brackets(inputExpr);
@@ -83,8 +65,7 @@ public class Evaluator extends Operation {
         }
         exprValues = inputExpr.split("\\s+");
         List<String> operators = getOperandsAndOperators(exprValues, operands);
-        double result = ResultForBigExpression(operands, operators, op);
-        return result;
+        return ResultForBigExpression(operands, operators, op);
     }
 
     public double getResult() throws Exception {

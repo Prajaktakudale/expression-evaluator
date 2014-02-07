@@ -3,11 +3,7 @@ package sourceLib;
 import java.util.HashMap;
 import java.util.Map;
 
-interface Operators {
-    void operate(double operand1, double operand2);
-}
-
-public class Operation {
+public class Operator {
     double answer;
 
     public double calculateResult(String operator, double no1, double no2) throws Exception {
