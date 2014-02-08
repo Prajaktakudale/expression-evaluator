@@ -5,16 +5,6 @@ import java.util.List;
 
 
 public class Evaluator {
-    private String expression;
-
-    public Evaluator(String expression) {
-        this.expression = expression;
-    }
-
-    public String getExpression() {
-        return this.expression;
-    }
-
     private double calculateResult(List<Double> operands, List<String> operators, Operator op){
         double num1 = operands.get(0);
         for (int index = 0; index < operators.size(); index++)
@@ -63,9 +53,5 @@ public class Evaluator {
         String[] expressionParts = inputExpr.split("\\s+");
         getOperandsAndOperators(expressionParts, operands, operators);
         return calculateResult(operands, operators, operator);
-    }
-
-    public double getResult() {
-        return getResult(this.expression);
     }
 }
