@@ -5,21 +5,24 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class Evaluator {
-    private double calculateResult(List<Double> operands, List<String> operators, Operator op){
-        double num1 = operands.get(0);
-        for (int index = 0; index < operators.size(); index++)
-            num1 = op.performOperation(operators.get(index), num1, operands.get(index + 1));
+public class Expression {
+    List<Double> operands = new ArrayList<>();
+    List<String> operators = new ArrayList<>();
+
+    private double calculateResult(Operator op){
+        double num1 = this.operands.get(0);
+        for (int index = 0; index < this.operators.size(); index++)
+            num1 = op.performOperation(this.operators.get(index), num1, this.operands.get(index + 1));
         return num1;
     }
 
-    private void getOperandsAndOperators(String[] inputParts, List<Double> operands, List<String> operators) {
+    private void getOperandsAndOperators(String[] inputParts) {
         String[] operatorAllowed = {"+","-","^","/","*"};
         for (String part : inputParts) {
             if(Arrays.asList(operatorAllowed).indexOf(part)>-1)
-                operators.add(part);
+                this.operators.add(part);
             else
-                operands.add(Double.parseDouble(part));
+                this.operands.add(Double.parseDouble(part));
         }
     }
 
@@ -45,14 +48,12 @@ public class Evaluator {
     public double getResult(String expression){
         String inputExpr = new SpaceHandler(expression).getExpressionWithSpace();
         Operator operator = new Operator();
-        List<Double> operands = new ArrayList<Double>();
-        List<String> operators = new ArrayList<String>();
         if (inputExpr.contains("(")) {
             inputExpr = solveBrackets(inputExpr);
-            return getResult(inputExpr);
+            return new Expression().getResult(inputExpr);
         }
         String[] expressionParts = inputExpr.split("\\s+");
-        getOperandsAndOperators(expressionParts, operands, operators);
-        return calculateResult(operands, operators, operator);
+        getOperandsAndOperators(expressionParts);
+        return calculateResult(operator);
     }
 }

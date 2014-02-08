@@ -1,5 +1,5 @@
 <project default="dist"
-         name="expression-evaluator">
+         name="expression-expression">
     <target name="init">
         <mkdir dir="build"/>
         <mkdir dir="build/classes"/>
@@ -130,11 +130,11 @@
     </target>
 
     <target name="createJar" depends="coverage">
-        <jar destfile="build/dist/lib/expression-evaluator.jar" basedir="build/classes/src"/>
+        <jar destfile="build/dist/lib/expression-expression.jar" basedir="build/classes/src"/>
     </target>
 
 
     <target name="dist" depends="createJar">
-        <zip destfile="evaluator-0.8.zip" basedir="build/dist" update="true"/>
+        <zip destfile="expression-0.8.zip" basedir="build/dist" update="true"/>
     </target>
 </project>
