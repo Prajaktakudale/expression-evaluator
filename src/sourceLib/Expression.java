@@ -18,9 +18,6 @@ public class Expression {
         this.operators = operators;
     }
 
-    public Expression() {
-    }
-
     public Expression calculateResult() {
         Operator op = new Operator();
         double result = this.operands.get(0).value;

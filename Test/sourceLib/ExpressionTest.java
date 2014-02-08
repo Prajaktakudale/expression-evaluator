@@ -6,7 +6,6 @@ import org.junit.Test;
 public class ExpressionTest {
     @Test
     public void testWillGives20IfExpression10plus10() throws Exception {
-        Expression expression = new Expression();
         Expression actual = new InputParser().parseInput("5 + 5");
 
         Assert.assertEquals(10.0, actual.getValue());
@@ -17,7 +16,6 @@ public class ExpressionTest {
         String expression = "10 - 10";
         double expected = 0.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -28,7 +26,6 @@ public class ExpressionTest {
         String expression = "5 * 4";
         double expected = 20.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -39,7 +36,6 @@ public class ExpressionTest {
         String expression = "15 / 5";
         double expected = 3.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -50,7 +46,6 @@ public class ExpressionTest {
         String expression = "2 ^ 3";
         double expected = 8.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -60,7 +55,6 @@ public class ExpressionTest {
     public void testWillGivesExpression() throws Exception {
         String expression = "2 + 3 *2 + 8";
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(18.0, actual.getValue());
@@ -71,7 +65,6 @@ public class ExpressionTest {
         String expression = "2 + 3 * 2 + 8";
         double expected = 18.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -82,7 +75,6 @@ public class ExpressionTest {
         String expression = "(2 + 1)";
         double expected = 3.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -93,7 +85,6 @@ public class ExpressionTest {
         String expression = "2 + 3 * ( 2 + 8 )";
         double expected = 50.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -104,7 +95,6 @@ public class ExpressionTest {
         String expression = "2 + 3 * ( 2 + 8 ) + (1 + 1)";
         double expected = 52.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -115,7 +105,6 @@ public class ExpressionTest {
         String expression = "2 + ( 1 + ( 2 + 1))";
         double expected = 6.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -126,7 +115,6 @@ public class ExpressionTest {
         String expression = "2 + ( (1 + 1)-(6 * ( 2 + 1)))";
         double expected = -14.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -137,7 +125,6 @@ public class ExpressionTest {
         String expression = "2.0 + 1.0";
         double expected = 3.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -148,7 +135,6 @@ public class ExpressionTest {
         String expression = "(2.0 + 1.0) + 4.0";
         double expected = 7.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -159,7 +145,6 @@ public class ExpressionTest {
         String expression = "2+2";
         double expected = 4.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -171,7 +156,6 @@ public class ExpressionTest {
         String expression = "2.0+1*((9.0*2)/2.0)";
         double expected = 27.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -182,7 +166,6 @@ public class ExpressionTest {
         String expression = "(-1)";
         double expected = -1.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -193,7 +176,6 @@ public class ExpressionTest {
         String expression = "(1)";
         double expected = 1;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -204,7 +186,6 @@ public class ExpressionTest {
         String expression = "-7/7";
         double expected = -1.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -215,7 +196,6 @@ public class ExpressionTest {
         String expression = "23+(-3)";
         double expected = 20.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -226,7 +206,6 @@ public class ExpressionTest {
         String expression = "9 - -9";
         double expected = 18.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -237,7 +216,6 @@ public class ExpressionTest {
         String expression = "-2-2";
         double expected = -4.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -247,7 +225,6 @@ public class ExpressionTest {
     public void testWillGiveExceptionAfterEvalutionOfExpression() throws Exception {
         String expression = "22*";
 
-        Expression evaluator = new Expression();
         new InputParser().parseInput(expression);
 
     }
@@ -257,7 +234,6 @@ public class ExpressionTest {
         String expression = "        8     +     0";
         double expected = 8.0;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -268,7 +244,6 @@ public class ExpressionTest {
         String expression = "2 ^ (-3)";
         double expected = 0.125;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
@@ -278,7 +253,6 @@ public class ExpressionTest {
     public void testWillGivesExceptionAfterEvalutionOfExpression() throws Exception {
         String expression = "a*1";
 
-        Expression evaluator = new Expression();
         new InputParser().parseInput(expression);
 
     }
@@ -288,7 +262,6 @@ public class ExpressionTest {
         String expression = "1.25 -- 0.25";
         double expected = 1.5;
 
-        Expression evaluator = new Expression();
         Expression actual = new InputParser().parseInput(expression);
 
         Assert.assertEquals(expected, actual.getValue());
