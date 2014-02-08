@@ -6,27 +6,36 @@ import java.util.List;
 
 
 public class Expression {
-    List<Double> operands = new ArrayList<>();
-    List<String> operators = new ArrayList<>();
+    private List<Expression> operands = new ArrayList<>();
+    private List<String> operators = new ArrayList<>();
+    private double value;
 
-    private double calculateResult(Operator op){
-        double num1 = this.operands.get(0);
+    public Expression(double value) {
+        this.value = value;
+    }
+
+    public Expression() {
+    }
+
+    private double calculateResult() {
+        Operator op = new Operator();
+        double num1 = this.operands.get(0).value;
         for (int index = 0; index < this.operators.size(); index++)
-            num1 = op.performOperation(this.operators.get(index), num1, this.operands.get(index + 1));
+            num1 = op.performOperation(this.operators.get(index), num1, this.operands.get(index + 1).value);
         return num1;
     }
 
     private void getOperandsAndOperators(String[] inputParts) {
-        String[] operatorAllowed = {"+","-","^","/","*"};
+        String[] operatorAllowed = {"+", "-", "^", "/", "*"};
         for (String part : inputParts) {
-            if(Arrays.asList(operatorAllowed).indexOf(part)>-1)
+            if (Arrays.asList(operatorAllowed).indexOf(part) > -1)
                 this.operators.add(part);
             else
-                this.operands.add(Double.parseDouble(part));
+                this.operands.add(new Expression(Double.parseDouble(part)));
         }
     }
 
-    private String solveBrackets(String expression){
+    private String solveBrackets(String expression) {
         StringBuilder exp = new StringBuilder(expression);
         int startIndex = -1;
         int endIndex = -1;
@@ -45,15 +54,14 @@ public class Expression {
         return exp.toString().trim();
     }
 
-    public double getResult(String expression){
+    public double getResult(String expression) {
         String inputExpr = new SpaceHandler(expression).getExpressionWithSpace();
-        Operator operator = new Operator();
         if (inputExpr.contains("(")) {
             inputExpr = solveBrackets(inputExpr);
             return new Expression().getResult(inputExpr);
         }
         String[] expressionParts = inputExpr.split("\\s+");
         getOperandsAndOperators(expressionParts);
-        return calculateResult(operator);
+        return calculateResult();
     }
 }
