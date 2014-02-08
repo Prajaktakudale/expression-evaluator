@@ -1,5 +1,5 @@
 package sourceLib;
 
-public interface Operators {
+public interface Operation {
     void operate(double operand1, double operand2);
 }

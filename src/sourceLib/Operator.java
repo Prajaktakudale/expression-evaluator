@@ -6,34 +6,34 @@ import java.util.Map;
 public class Operator {
     double answer;
 
-    public double calculateResult(String operator, double no1, double no2) throws Exception {
-        Map<String, Operators> map = new HashMap<String, Operators>();
+    public double performOperation(String operator, double no1, double no2){
+        Map<String, Operation> map = new HashMap<String, Operation>();
 
-        map.put("+", new Operators() {
+        map.put("+", new Operation() {
             public void operate(double operand1, double operand2) {
                 answer = operand1 + operand2;
             }
         });
 
-        map.put("-", new Operators() {
+        map.put("-", new Operation() {
             public void operate(double operand1, double operand2) {
                 answer = operand1 - operand2;
             }
         });
 
-        map.put("*", new Operators() {
+        map.put("*", new Operation() {
             public void operate(double operand1, double operand2) {
                 answer = operand1 * operand2;
             }
         });
 
-        map.put("/", new Operators() {
+        map.put("/", new Operation() {
             public void operate(double operand1, double operand2) {
                 answer = operand1 / operand2;
             }
         });
 
-        map.put("^", new Operators() {
+        map.put("^", new Operation() {
             public void operate(double operand1, double operand2) {
                 answer = Math.pow(operand1, operand2);
             }

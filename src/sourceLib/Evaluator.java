@@ -5,70 +5,67 @@ import java.util.List;
 
 
 public class Evaluator {
-    String expr;
+    private String expression;
 
     public Evaluator(String expression) {
-        this.expr = expression;
+        this.expression = expression;
     }
 
     public String getExpression() {
-        return this.expr;
+        return this.expression;
     }
 
-    private double ResultForBigExpression(List<Double> operands, List<String> operators, Operator op) throws Exception {
+    private double calculateResult(List<Double> operands, List<String> operators, Operator op){
         double num1 = operands.get(0);
-        for (int index = 0; index < operators.size(); index++) {
-            num1 = op.calculateResult(operators.get(index), num1, operands.get(index + 1));
-        }
+        for (int index = 0; index < operators.size(); index++)
+            num1 = op.performOperation(operators.get(index), num1, operands.get(index + 1));
         return num1;
     }
 
-    private List<String> getOperandsAndOperators(String[] values, List<Double> operands) throws Exception{
-        List<String> operators = new ArrayList<String>();
-        for (String operator : values) {
+    private void getOperandsAndOperators(String[] values, List<Double> operands, List<String> operators) {
+        for (String value : values) {
             try {
-                operands.add(Double.parseDouble(operator));
+                operands.add(Double.parseDouble(value));
             } catch (Exception ex) {
-                operators.add(operator);
+                operators.add(value);
             }
         }
-        return operators;
     }
 
-    private String brackets(String expression) throws Exception {
+    private String solveBrackets(String expression){
         StringBuilder exp = new StringBuilder(expression);
-        int start = 0;
-        int end = 0;
+        int startIndex = -1;
+        int endIndex = -1;
         for (int index = 0; index < expression.length(); index++) {
             if (expression.charAt(index) == '(') {
-                start = index;
+                startIndex = index;
             }
             if (expression.charAt(index) == ')') {
-                end = index;
+                endIndex = index;
                 break;
             }
         }
-        StringBuilder innerExpression = new StringBuilder(expression.substring(start + 1, end));
+        StringBuilder innerExpression = new StringBuilder(expression.substring(startIndex + 1, endIndex));
         double result = getResult(innerExpression.toString().trim());
-        exp.replace(start, end + 1, Double.toString(result));
+        exp.replace(startIndex, endIndex + 1, Double.toString(result));
         return exp.toString().trim();
     }
 
-    public double getResult(String exprInsideBracket) throws Exception {
-        String inputExpr = new SpaceHandler(exprInsideBracket).getExpressionWithSpace();
-        String[] exprValues;
-        Operator op = new Operator();
+    public double getResult(String expression){
+        String inputExpr = new SpaceHandler(expression).getExpressionWithSpace();
+        Operator operator = new Operator();
         List<Double> operands = new ArrayList<Double>();
+        List<String> operators = new ArrayList<String>();
         if (inputExpr.contains("(")) {
-            inputExpr = brackets(inputExpr);
+            inputExpr = solveBrackets(inputExpr);
             return getResult(inputExpr);
         }
-        exprValues = inputExpr.split("\\s+");
-        List<String> operators = getOperandsAndOperators(exprValues, operands);
-        return ResultForBigExpression(operands, operators, op);
+        String[] expressionParts = inputExpr.split("\\s+");
+        getOperandsAndOperators(expressionParts, operands, operators);
+        return calculateResult(operands, operators, operator);
     }
 
-    public double getResult() throws Exception {
-        return getResult(this.expr);
+    public double getResult() {
+        return getResult(this.expression);
     }
 }

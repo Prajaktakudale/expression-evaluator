@@ -12,7 +12,7 @@ public class OperatorTest {
         Operator operator = new Operator();
         double expected = 3;
 
-        double actual = operator.calculateResult("+", 1, 2);
+        double actual = operator.performOperation("+", 1, 2);
 
         Assert.assertEquals(expected, actual, 1);
     }
@@ -22,7 +22,7 @@ public class OperatorTest {
         Operator operator = new Operator();
         double expected = -10;
 
-        double actual = operator.calculateResult("-", 10, 20);
+        double actual = operator.performOperation("-", 10, 20);
 
         Assert.assertEquals(expected, actual, 1);
     }
@@ -32,7 +32,7 @@ public class OperatorTest {
         Operator operator = new Operator();
         double expected = 10;
 
-        double actual = operator.calculateResult("*", 5, 2);
+        double actual = operator.performOperation("*", 5, 2);
 
         Assert.assertEquals(expected, actual, 1);
     }
@@ -42,7 +42,7 @@ public class OperatorTest {
         Operator operator = new Operator();
         double expected = 4;
 
-        double actual = operator.calculateResult("/", 20, 5);
+        double actual = operator.performOperation("/", 20, 5);
 
         Assert.assertEquals(expected, actual, 1);
     }
@@ -52,7 +52,7 @@ public class OperatorTest {
         Operator operator = new Operator();
         double expected = 16;
 
-        double actual = operator.calculateResult("^", 4, 2);
+        double actual = operator.performOperation("^", 4, 2);
 
         Assert.assertEquals(expected, actual, 1);
     }
