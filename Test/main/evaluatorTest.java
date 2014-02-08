@@ -10,7 +10,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult("5 + 5");
 
-        Assert.assertEquals(actual, 10.0);
+        Assert.assertEquals(10.0, actual);
     }
 
     @Test
@@ -21,7 +21,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -86,7 +86,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -97,7 +97,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -108,7 +108,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -119,7 +119,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -130,7 +130,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -141,7 +141,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -152,7 +152,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -163,7 +163,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
 
@@ -175,7 +175,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -186,7 +186,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -197,7 +197,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -208,7 +208,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -219,7 +219,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -230,7 +230,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -241,7 +241,7 @@ public class evaluatorTest {
         Evaluator evaluator = new Evaluator();
         double actual = evaluator.getResult(expression);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
@@ -275,7 +275,7 @@ public class evaluatorTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = NumberFormatException.class)
     public void testWillGivesExceptionAfterEvalutionOfExpression() throws Exception {
         String expression = "a*1";
 

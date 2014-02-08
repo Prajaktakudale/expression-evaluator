@@ -1,6 +1,7 @@
 package sourceLib;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -12,13 +13,13 @@ public class Evaluator {
         return num1;
     }
 
-    private void getOperandsAndOperators(String[] values, List<Double> operands, List<String> operators) {
-        for (String value : values) {
-            try {
-                operands.add(Double.parseDouble(value));
-            } catch (Exception ex) {
-                operators.add(value);
-            }
+    private void getOperandsAndOperators(String[] inputParts, List<Double> operands, List<String> operators) {
+        String[] operatorAllowed = {"+","-","^","/","*"};
+        for (String part : inputParts) {
+            if(Arrays.asList(operatorAllowed).indexOf(part)>-1)
+                operators.add(part);
+            else
+                operands.add(Double.parseDouble(part));
         }
     }
 
@@ -35,8 +36,8 @@ public class Evaluator {
                 break;
             }
         }
-        StringBuilder innerExpression = new StringBuilder(expression.substring(startIndex + 1, endIndex));
-        double result = getResult(innerExpression.toString().trim());
+        String innerExpression = expression.substring(startIndex + 1, endIndex);
+        double result = getResult(innerExpression.trim());
         exp.replace(startIndex, endIndex + 1, Double.toString(result));
         return exp.toString().trim();
     }
